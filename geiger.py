@@ -86,14 +86,14 @@ class Geiger(object):
         self.value_per_hour_metric = Gauge("value_per_hour", "Value per hour in Sv/h")
         self.counter_metric = Gauge("counter", "Count per minute")
 
-        gpio.set_mode(gpio.BOARD)
+        gpio.setmode(gpio.BOARD)
         gpio.setup(self.gpio_pin, gpio.IN)
         gpio.add_event_detect(self.gpio_pin, gpio.FALLING)
         gpio.add_event_callback(self.gpio_pin, self.__impulse)
         start_http_server(8001)
         threading.Thread(target=self.__update_prometheus_metrics).start()
 
-    def __implulse(self, channel):
+    def __impulse(self, channel):
         self.timer.append(datetime.now())
         self.total_count += 1
         self.counter += 1
