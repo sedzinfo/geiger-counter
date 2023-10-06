@@ -24,7 +24,6 @@ os.system("clear")
 # total_count += 1
 # counter += 1
 
-
 # def init():
 # global total_count
 # global counter
@@ -44,7 +43,6 @@ os.system("clear")
 # start_http_server(8000)
 # threading.Thread(target=update_prometheus_metrics).start()
 
-
 # def update_prometheus_metrics():
 #     while True:
 #         value_per_hour = round(counter / 151, 5)
@@ -53,12 +51,10 @@ os.system("clear")
 #         value_per_hour_metric.set(value_per_hour)
 #         time.sleep(60)
 
-
 # def main():
-#     # global counter
-#     # global timer
+#     global counter
+#     global timer
 #     init()
-
 #     try:
 #         while True:
 #             for i in timer:
@@ -80,12 +76,10 @@ class Geiger(object):
         self.total_count = total_count
         self.counter = counter
         self.timer = timer
-
         self.gpio_pin = 7
         self.total_count_metric = Counter("total_count", "Total count of events")
         self.value_per_hour_metric = Gauge("value_per_hour", "Value per hour in Sv/h")
         self.counter_metric = Gauge("counter", "Count per minute")
-
         gpio.setmode(gpio.BOARD)
         gpio.setup(self.gpio_pin, gpio.IN)
         gpio.add_event_detect(self.gpio_pin, gpio.FALLING)
@@ -122,11 +116,9 @@ class Geiger(object):
         except KeyboardInterrupt:
             gpio.cleanup()
 
-
 def main():
     geiger = Geiger()
     geiger.main_loop()
-
 
 if __name__ == "__main__":
     main()
