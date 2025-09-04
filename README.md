@@ -81,3 +81,16 @@ The configuration bellow will startup prometheus and the script automatically on
 Finally you need to create a grafana account and use the grafana_configuration.json to create the graphs shown bellow
 
 ![Alt text](https://github.com/sedzinfo/geiger-counter/blob/main/grafana.png)
+
+---
+
+![Stars](https://img.shields.io/github/stars/sedzinfo/geiger-counter)
+![Watchers](https://img.shields.io/github/watchers/sedzinfo/geiger-counter)
+![Repo Size](https://img.shields.io/github/repo-size/sedzinfo/geiger-counter)
+![Open Issues](https://img.shields.io/github/issues/sedzinfo/geiger-counter)
+![Forks](https://img.shields.io/github/forks/sedzinfo/geiger-counter)
+![Last Commit](https://img.shields.io/github/last-commit/sedzinfo/geiger-counter)
+![Contributors](https://img.shields.io/github/contributors/sedzinfo/geiger-counter)
+![License](https://img.shields.io/github/license/sedzinfo/geiger-counter)
+![Release](https://img.shields.io/github/v/release/sedzinfo/geiger-counter)
+![Workflow Status](https://img.shields.io/github/actions/workflow/status/sedzinfo/geiger-counter/main.yml)
